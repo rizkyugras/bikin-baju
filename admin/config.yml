@@ -1,0 +1,43 @@
+backend:
+  name: github
+  repo: rizkyugras/bikin-baju
+  branch: main
+  # Login tanpa server tambahan (PKCE)
+  auth_type: pkce
+  app_id: Ov23liZecJHq4ejOJkOc
+
+site_url: https://bikin-baju.com
+logo_url: https://bikin-baju.com/assets/img/logo.png
+locale: id
+
+media_folder: "assets/img/media"
+public_folder: "/assets/img/media"
+
+collections:
+  - name: "posts"
+    label: "Artikel Blog"
+    label_singular: "Artikel"
+    folder: "content/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    sortable_fields: ["date", "title"]
+    summary: "{{title}} - {{date}}"
+    fields:
+      - label: "Judul"
+        name: "title"
+        widget: "string"
+      - label: "Tanggal"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - label: "Deskripsi Singkat"
+        name: "description"
+        widget: "string"
+        hint: "1-2 kalimat yang tampil di daftar blog dan hasil pencarian Google"
+      - label: "Isi Artikel"
+        name: "body"
+        widget: "markdown"

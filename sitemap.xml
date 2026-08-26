@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://bikin-baju.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://bikin-baju.com/produk/kemeja/</loc><priority>0.9</priority></url>
+  <url><loc>https://bikin-baju.com/produk/kaos-t-shirt/</loc><priority>0.9</priority></url>
+  <url><loc>https://bikin-baju.com/produk/polo-shirt/</loc><priority>0.9</priority></url>
+  <url><loc>https://bikin-baju.com/produk/rompi/</loc><priority>0.9</priority></url>
+  <url><loc>https://bikin-baju.com/produk/celana/</loc><priority>0.9</priority></url>
+  <url><loc>https://bikin-baju.com/produk/wearpack/</loc><priority>0.9</priority></url>
+  <url><loc>https://bikin-baju.com/galeri/</loc><priority>0.7</priority></url>
+  <url><loc>https://bikin-baju.com/blog/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://bikin-baju.com/kontak/</loc><priority>0.8</priority></url>
+<!-- BLOG:START -->
+  <url><loc>https://bikin-baju.com/blog/cara-memilih-bahan-seragam-kerja/</loc><lastmod>2026-08-25</lastmod></url>
+  <!-- BLOG:END -->
+</urlset>

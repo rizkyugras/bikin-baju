@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="800" height="600" role="img" aria-label="Celana Kerja">
+  <rect width="200" height="200" fill="#eff7f9"/>
+  <rect x="8" y="8" width="184" height="184" fill="none" stroke="#0f5e74" stroke-width="1.5" stroke-dasharray="6 5" opacity=".45" rx="12"/>
+  <g transform="translate(0,-6)">
+    <path d="M74 38 L126 38 L136 165 L108 165 L100 100 L92 165 L64 165 Z" fill="#0f5e74" opacity=".92"/>
+    <path d="M74 38 L126 38 L136 165 L108 165 L100 100 L92 165 L64 165 Z" fill="none" stroke="#06333f" stroke-width="2" stroke-dasharray="5 4"/>
+  </g>
+  <rect x="40" y="168" width="120" height="20" rx="10" fill="#ffd200"/>
+  <text x="100" y="182" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="bold" fill="#06333f">CELANA KERJA</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Bikin-Baju.com Konveksi Seragam Kerja">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#06333f"/>
+      <stop offset="1" stop-color="#0b4a5c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <line x1="0" y1="614" x2="1200" y2="614" stroke="#ffd200" stroke-width="4" stroke-dasharray="18 12" opacity=".7"/>
+  <line x1="0" y1="16" x2="1200" y2="16" stroke="#ffffff" stroke-width="2" stroke-dasharray="14 10" opacity=".25"/>
+  <rect x="70" y="120" width="150" height="150" rx="34" fill="#08404f" stroke="#ffd200" stroke-width="5"/>
+  <text x="145" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="bold" fill="#ffffff">bb</text>
+  <rect x="240" y="128" width="330" height="56" rx="28" fill="#ffd200"/>
+  <text x="405" y="165" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="bold" fill="#06333f">BIKIN-BAJU.COM</text>
+  <text x="72" y="360" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#ffffff">Konveksi Seragam Kerja</text>
+  <text x="72" y="435" font-family="Arial, Helvetica, sans-serif" font-size="62" font-weight="bold" fill="#ffd200">&amp; Seragam Kantor</text>
+  <text x="74" y="495" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#dceef3">Sejak 2017 · 1.300+ klien · 928.000+ pcs diproduksi · MOQ 12 pcs</text>
+  <text x="74" y="545" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#9fc4cf">Karanganyar, Jawa Tengah — kirim ke seluruh Indonesia &amp; luar negeri</text>
+</svg>

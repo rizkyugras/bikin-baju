@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# AI crawlers dipersilakan membaca situs ini
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://bikin-baju.com/sitemap.xml
