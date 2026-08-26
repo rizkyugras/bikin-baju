@@ -1,0 +1,9 @@
+# Redirect dari URL WordPress lama ke halaman baru
+/contact-us/   /kontak/   301
+/contact-us    /kontak/   301
+/harga/        /          301
+/harga         /          301
+/produk/       /#produk   301
+/produk        /#produk   301
+/home          /          301
+/sample-page/  /          301
