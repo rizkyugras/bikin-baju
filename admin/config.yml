@@ -2,9 +2,8 @@ backend:
   name: github
   repo: rizkyugras/bikin-baju
   branch: main
-  # Login tanpa server tambahan (PKCE)
-  auth_type: pkce
-  app_id: Ov23liZecJHq4ejOJkOc
+  # Login via OAuth proxy di Cloudflare Workers
+  base_url: https://bikinbaju-oauth.f6944458.workers.dev
 
 site_url: https://bikin-baju.com
 logo_url: https://bikin-baju.com/assets/img/logo.png
