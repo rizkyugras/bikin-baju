@@ -49,10 +49,18 @@ export default {
       if (!data.access_token) {
         return new Response("Gagal mendapat token: " + (data.error_description || "tidak diketahui"), { status: 400 });
       }
-      const html = `<!DOCTYPE html><html><body><script>
-        window.opener.postMessage({ token: ${JSON.stringify(data.access_token)}, provider: "github" }, "*");
-        window.close();
-      <\/script>Masuk berhasil. Silakan tutup tab ini jika tidak tertutup otomatis.</body></html>`;
+      const html = `<!DOCTYPE html><html><body style="font-family:sans-serif;text-align:center;padding-top:40px">
+        <h2>Masuk Berhasil</h2>
+        <p>Token GitHub berhasil diterima. Silakan tutup tab ini secara manual.</p>
+        <script>
+          try {
+            window.opener.postMessage({ token: ${JSON.stringify(data.access_token)}, provider: "github" }, "*");
+            document.body.innerHTML += "<p style=color:green>pesan token terkirim ke CMS.</p>";
+          } catch (e) {
+            document.body.innerHTML += "<p style=color:red>error opener: " + e.message + "</p>";
+          }
+        <\/script>
+      </body></html>`;
       return new Response(html, { headers: { "Content-Type": "text/html; charset=utf-8" } });
     }
 
