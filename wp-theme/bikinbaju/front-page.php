@@ -36,8 +36,8 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 			</div>
 			<div class="hero-visual" aria-hidden="true">
 				<div class="hero-badge">Total Produksi<b>928.000+ pcs</b></div>
-				<div class="hero-card a"><img src="<?php echo esc_url( $theme . '/assets/img/produk/kemeja.webp' ); ?>" alt="" loading="eager" width="480" height="600"></div>
-				<div class="hero-card b"><img src="<?php echo esc_url( $theme . '/assets/img/galeri/jaket-safety.webp' ); ?>" alt="" loading="lazy" width="480" height="360"></div>
+				<div class="hero-card a"><img src="<?php echo bb_image( 'bb_hero_img_a', '/assets/img/produk/kemeja.webp' ); ?>" alt="" loading="eager" width="480" height="600"></div>
+				<div class="hero-card b"><img src="<?php echo bb_image( 'bb_hero_img_b', '/assets/img/galeri/jaket-safety.webp' ); ?>" alt="" loading="lazy" width="480" height="360"></div>
 			</div>
 		</div>
 	</section>
@@ -191,8 +191,9 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 				);
 				$n = 1;
 				foreach ( $gallery as $file => $alt ) :
+					$num = str_pad( $n, 2, '0', STR_PAD_LEFT );
 					?>
-					<button class="gallery-item" type="button" aria-label="Perbesar foto galeri <?php echo $n; ?>"><img src="<?php echo esc_url( $theme . '/assets/img/galeri/' . $file ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" width="400" height="400"></button>
+					<button class="gallery-item" type="button" aria-label="Perbesar foto galeri <?php echo $n; ?>"><img src="<?php echo bb_image( 'bb_galeri_' . $num, '/assets/img/galeri/' . $file ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" width="400" height="400"></button>
 					<?php $n++; endforeach; ?>
 			</div>
 			<div style="text-align:center;margin-top:36px" class="reveal">

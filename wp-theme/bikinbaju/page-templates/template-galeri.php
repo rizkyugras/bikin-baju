@@ -39,7 +39,8 @@ $wa_katalog = bb_wa_url( 'Halo Bikinbaju, saya mau minta katalog produk. Bisa di
 		<div class="container">
 			<div class="gallery-page-grid">
 				<?php $n = 1; foreach ( $gallery as $file => $alt ) : ?>
-					<button class="gallery-item" type="button" aria-label="Perbesar foto galeri <?php echo $n; ?>"><img src="<?php echo esc_url( $theme . '/assets/img/galeri/' . $file ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" width="400" height="400"></button>
+					<?php $num = str_pad( $n, 2, '0', STR_PAD_LEFT ); ?>
+					<button class="gallery-item" type="button" aria-label="Perbesar foto galeri <?php echo $n; ?>"><img src="<?php echo bb_image( 'bb_galeri_' . $num, '/assets/img/galeri/' . $file ); ?>" alt="<?php echo esc_attr( $alt ); ?>" loading="lazy" width="400" height="400"></button>
 					<?php $n++; endforeach; ?>
 			</div>
 

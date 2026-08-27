@@ -31,6 +31,60 @@ function bb_default_wa() {
 }
 
 /* -------------------------------------------------------------------------
+ * Pengaturan beranda di Customizer (Appearance > Customize > "Beranda - Foto")
+ * ---------------------------------------------------------------------- */
+function bb_image( $key, $default_rel ) {
+	$v = get_theme_mod( $key, '' );
+	if ( $v ) {
+		return esc_url( $v );
+	}
+	return esc_url( get_template_directory_uri() . $default_rel );
+}
+
+function bb_customize_register( $wp_customize ) {
+	$wp_customize->add_section( 'bb_home', array(
+		'title'    => __( 'Beranda - Foto', 'bikinbaju' ),
+		'priority' => 30,
+	) );
+
+	$images = array(
+		'bb_hero_img_a' => array( 'Foto hero kiri', '/assets/img/produk/kemeja.webp' ),
+		'bb_hero_img_b' => array( 'Foto hero kanan', '/assets/img/galeri/jaket-safety.webp' ),
+	);
+	foreach ( $images as $key => $info ) {
+		$wp_customize->add_setting( $key, array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $key, array(
+			'label'   => $info[0],
+			'section' => 'bb_home',
+			'settings'=> $key,
+		) ) );
+	}
+
+	for ( $i = 1; $i <= 12; $i++ ) {
+		$num = str_pad( $i, 2, '0', STR_PAD_LEFT );
+		$key = 'bb_galeri_' . $num;
+		$wp_customize->add_setting( $key, array( 'default' => '', 'sanitize_callback' => 'esc_url_raw' ) );
+		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $key, array(
+			'label'   => sprintf( __( 'Foto galeri %d', 'bikinbaju' ), $i ),
+			'section' => 'bb_home',
+			'settings'=> $key,
+		) ) );
+	}
+}
+add_action( 'customize_register', 'bb_customize_register' );
+
+/* -------------------------------------------------------------------------
+ * Media uploader untuk gambar produk di meta box
+ * ---------------------------------------------------------------------- */
+function bb_admin_assets( $hook ) {
+	if ( 'post.php' === $hook || 'post-new.php' === $hook ) {
+		wp_enqueue_media();
+		wp_enqueue_script( 'bb-admin-media', get_template_directory_uri() . '/assets/js/admin-media.js', array( 'jquery' ), BB_VERSION, true );
+	}
+}
+add_action( 'admin_enqueue_scripts', 'bb_admin_assets' );
+
+/* -------------------------------------------------------------------------
  * Setup tema
  * ---------------------------------------------------------------------- */
 function bikinbaju_setup() {
@@ -85,8 +139,16 @@ function bb_product_metabox_render( $post ) {
 		$val = get_post_meta( $post->ID, $key, true );
 		echo '<tr>';
 		echo '<td style="width:30%;vertical-align:top;padding:8px 10px 8px 0"><label for="' . esc_attr( $key ) . '"><strong>' . esc_html( $info[0] ) . '</strong><br><small>' . esc_html( $info[1] ) . '</small></label></td>';
-		echo '<td style="padding:8px 0"><textarea id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" rows="5" style="width:100%">' . esc_textarea( $val ) . '</textarea></td>';
-		echo '</tr>';
+		echo '<td style="padding:8px 0">';
+		if ( '_bb_image' === $key ) {
+			echo '<div style="display:flex;gap:8px;align-items:center">';
+			echo '<input type="text" id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" value="' . esc_attr( $val ) . '" style="width:100%" placeholder="/assets/img/produk/kemeja.webp">';
+			echo '<button type="button" class="button bb-pick-image" data-target="' . esc_attr( $key ) . '">Pilih dari Media</button>';
+			echo '</div>';
+		} else {
+			echo '<textarea id="' . esc_attr( $key ) . '" name="' . esc_attr( $key ) . '" rows="5" style="width:100%">' . esc_textarea( $val ) . '</textarea>';
+		}
+		echo '</td></tr>';
 	}
 	echo '</table>';
 }
