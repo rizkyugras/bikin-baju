@@ -15,7 +15,7 @@ define( 'BB_WA', '6281211671157' );
 /* -------------------------------------------------------------------------
  * Data produk
  * ---------------------------------------------------------------------- */
-$GLOBALS['bb_products'] = require get_template_directory() . '/inc/product-data.php';
+$GLOBALS['bb_products'] = json_decode( file_get_contents( get_template_directory() . '/inc/product-data.json' ), true );
 
 function bb_products() {
 	return $GLOBALS['bb_products'];

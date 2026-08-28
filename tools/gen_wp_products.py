@@ -5,7 +5,7 @@ import os
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(BASE, "tools", "products.json")
-OUT = os.path.join(BASE, "wp-theme", "bikinbaju", "inc", "product-data.php")
+OUT = os.path.join(BASE, "wp-theme", "bikinbaju", "inc", "product-data.json")
 
 with open(DATA, encoding="utf-8") as f:
     data = json.load(f)
@@ -31,8 +31,6 @@ for p in data["products"]:
         "wa": p["wa_text"],
     })
 
-lines = ["<?php", "// Data produk untuk theme Bikinbaju (dihasilkan dari tools/products.json)", "// Jangan diedit manual — jalankan: python3 tools/gen_wp_products.py", "return " + php_str(products) + ";", ""]
-
 with open(OUT, "w", encoding="utf-8") as f:
-    f.write("\n".join(lines))
+    json.dump(products, f, ensure_ascii=False, indent=2)
 print("OK", os.path.relpath(OUT, BASE))
