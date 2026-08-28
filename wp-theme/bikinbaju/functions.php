@@ -41,6 +41,50 @@ function bb_image( $key, $default_rel ) {
 	return esc_url( get_template_directory_uri() . $default_rel );
 }
 
+function bb_text( $key, $default ) {
+	$v = get_theme_mod( $key, '' );
+	if ( '' !== $v ) {
+		return esc_html( $v );
+	}
+	return $default;
+}
+
+function bb_text_fields() {
+	return array(
+		'bb_t_hero_kicker' => array( 'Hero - label atas', 1 ),
+		'bb_t_hero_h1'     => array( 'Hero - judul utama', 1 ),
+		'bb_t_hero_sub'    => array( 'Hero - teks di bawah judul', 3 ),
+		'bb_t_hero_badge1' => array( 'Hero - teks badge (atas)', 1 ),
+		'bb_t_hero_badge2' => array( 'Hero - teks badge (bawah)', 1 ),
+		'bb_t_chip1'       => array( 'Hero - bubble 1', 1 ),
+		'bb_t_chip2'       => array( 'Hero - bubble 2', 1 ),
+		'bb_t_chip3'       => array( 'Hero - bubble 3', 1 ),
+		'bb_t_about_kicker' => array( 'Tentang - label atas', 1 ),
+		'bb_t_about_title' => array( 'Tentang - judul', 2 ),
+		'bb_t_about_p1'    => array( 'Tentang - paragraf 1', 5 ),
+		'bb_t_about_p2'    => array( 'Tentang - paragraf 2', 5 ),
+		'bb_t_fac_kicker'  => array( 'Fasilitas - label atas', 1 ),
+		'bb_t_fac_title'   => array( 'Fasilitas - judul', 1 ),
+		'bb_t_fac_sub'     => array( 'Fasilitas - teks pendukung', 2 ),
+		'bb_t_pro_kicker'  => array( 'Cara Kerja - label atas', 1 ),
+		'bb_t_pro_title'   => array( 'Cara Kerja - judul', 1 ),
+		'bb_t_pro_sub'     => array( 'Cara Kerja - teks pendukung', 2 ),
+		'bb_t_kat_kicker'  => array( 'Katalog - label atas', 1 ),
+		'bb_t_kat_title'   => array( 'Katalog - judul', 1 ),
+		'bb_t_kat_sub'     => array( 'Katalog - teks pendukung', 2 ),
+		'bb_t_kl_kicker'   => array( 'Klien - label atas', 1 ),
+		'bb_t_kl_title'    => array( 'Klien - judul', 1 ),
+		'bb_t_kl_sub'      => array( 'Klien - teks pendukung', 2 ),
+		'bb_t_gal_kicker'  => array( 'Galeri - label atas', 1 ),
+		'bb_t_gal_title'   => array( 'Galeri - judul', 1 ),
+		'bb_t_gal_sub'     => array( 'Galeri - teks pendukung', 2 ),
+		'bb_t_faq_kicker'  => array( 'FAQ - label atas', 1 ),
+		'bb_t_faq_title'   => array( 'FAQ - judul', 1 ),
+		'bb_t_cta_title'   => array( 'CTA (banner akhir) - judul', 1 ),
+		'bb_t_cta_text'    => array( 'CTA (banner akhir) - teks', 3 ),
+	);
+}
+
 function bb_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'bb_home', array(
 		'title'    => __( 'Beranda - Foto', 'bikinbaju' ),
@@ -68,6 +112,23 @@ function bb_customize_register( $wp_customize ) {
 			'label'   => sprintf( __( 'Foto galeri %d', 'bikinbaju' ), $i ),
 			'section' => 'bb_home',
 			'settings'=> $key,
+		) ) );
+	}
+
+	// Bagian teks beranda
+	$wp_customize->add_section( 'bb_home_text', array(
+		'title'    => __( 'Beranda - Teks', 'bikinbaju' ),
+		'priority' => 31,
+		'description' => __( 'Kosongkan kolom untuk memakai teks bawaan.', 'bikinbaju' ),
+	) );
+	foreach ( bb_text_fields() as $key => $info ) {
+		$wp_customize->add_setting( $key, array( 'default' => '', 'sanitize_callback' => 'sanitize_textarea_field' ) );
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $key, array(
+			'label'   => $info[0],
+			'section' => 'bb_home_text',
+			'settings'=> $key,
+			'type'    => 'textarea',
+			'input_attrs' => array( 'rows' => $info[1] ),
 		) ) );
 	}
 }

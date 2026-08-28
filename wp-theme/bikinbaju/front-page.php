@@ -1,6 +1,7 @@
 <?php
 /**
  * Template halaman depan (Beranda).
+ * Teks bisa diedit dari Appearance > Customize > "Beranda - Teks".
  *
  * @package Bikinbaju
  */
@@ -21,21 +22,21 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section class="hero" aria-label="Perkenalan">
 		<div class="container hero-grid">
 			<div>
-				<p class="kicker">Konveksi Seragam Terpercaya Sejak 2017</p>
-				<h1>Konveksi <em>Seragam Kerja</em> &amp; Seragam Kantor</h1>
-				<p class="hero-sub">Produsen seragam untuk perusahaan di <strong>seluruh Indonesia dan luar negeri</strong>. Lebih dari <strong>1.300 klien</strong> telah membuktikan dengan <strong>928.000+ pcs</strong> pakaian yang kami produksi — minimum order 12 pcs saja.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_hero_kicker', 'Konveksi Seragam Terpercaya Sejak 2017' ); ?></p>
+				<h1><?php echo bb_text( 'bb_t_hero_h1', 'Konveksi <em>Seragam Kerja</em> &amp; Seragam Kantor' ); ?></h1>
+				<p class="hero-sub"><?php echo bb_text( 'bb_t_hero_sub', 'Produsen seragam untuk perusahaan di <strong>seluruh Indonesia dan luar negeri</strong>. Lebih dari <strong>1.300 klien</strong> telah membuktikan dengan <strong>928.000+ pcs</strong> pakaian yang kami produksi — minimum order 12 pcs saja.' ); ?></p>
 				<div class="hero-actions">
 					<a class="btn btn-wa" href="<?php echo esc_url( $wa_default ); ?>" rel="noopener" target="_blank"><?php echo $wa_svg; ?> Tanya Harga via WhatsApp</a>
 					<a class="btn btn-outline" href="#produk">Lihat Produk</a>
 				</div>
 				<div class="hero-chips">
-					<span class="chip"><?php echo $check; ?> Free ongkir</span>
-					<span class="chip"><?php echo $check; ?> MOQ mulai 12 pcs</span>
-					<span class="chip"><?php echo $check; ?> Desain &amp; sampel kain gratis</span>
+					<span class="chip"><?php echo $check; ?> <?php echo bb_text( 'bb_t_chip1', 'Free ongkir' ); ?></span>
+					<span class="chip"><?php echo $check; ?> <?php echo bb_text( 'bb_t_chip2', 'MOQ mulai 12 pcs' ); ?></span>
+					<span class="chip"><?php echo $check; ?> <?php echo bb_text( 'bb_t_chip3', 'Desain &amp; sampel kain gratis' ); ?></span>
 				</div>
 			</div>
 			<div class="hero-visual" aria-hidden="true">
-				<div class="hero-badge">Total Produksi<b>928.000+ pcs</b></div>
+				<div class="hero-badge"><?php echo bb_text( 'bb_t_hero_badge1', 'Total Produksi' ); ?><b><?php echo bb_text( 'bb_t_hero_badge2', '928.000+ pcs' ); ?></b></div>
 				<div class="hero-card a"><img src="<?php echo bb_image( 'bb_hero_img_a', '/assets/img/produk/kemeja.webp' ); ?>" alt="" loading="eager" width="480" height="600"></div>
 				<div class="hero-card b"><img src="<?php echo bb_image( 'bb_hero_img_b', '/assets/img/galeri/jaket-safety.webp' ); ?>" alt="" loading="lazy" width="480" height="360"></div>
 			</div>
@@ -54,10 +55,10 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="tentang">
 		<div class="container intro-grid">
 			<div class="reveal">
-				<p class="kicker">Produsen Seragam Berpengalaman</p>
-				<h2 class="section-title">Ahli Seragam Kerja yang Dipercaya 1.300+ Perusahaan di Seluruh Indonesia</h2>
-				<p style="margin-top:18px"><strong>Bikin-Baju.com (Bikinbaju) adalah konveksi seragam kerja dan seragam kantor</strong> yang beroperasi sejak 2017, memproduksi kemeja, kaos t-shirt, polo shirt, rompi, celana, dan wearpack untuk perusahaan di seluruh Indonesia maupun luar negeri.</p>
-				<p>Hingga hari ini lebih dari <strong>1.300 perusahaan</strong> — termasuk Pertamina, Pelindo, Pegadaian, dan Nusa Raya Cipta — mempercayakan seragam mereka kepada kami, dengan total lebih dari <strong>928.000 pcs pakaian diproduksi</strong>. Setiap pesanan dikerjakan tenaga jahit berpengalaman dengan kontrol kualitas berlapis: dari pemilihan bahan, pemotongan, jahitan, hingga pengemasan. Kami berkomitmen pada <strong>produksi tepat waktu, garansi produksi, dan harga bersaing</strong> — supaya perusahaan Anda mendapat seragam terbaik tanpa melebihi anggaran.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_about_kicker', 'Produsen Seragam Berpengalaman' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_about_title', 'Ahli Seragam Kerja yang Dipercaya 1.300+ Perusahaan di Seluruh Indonesia' ); ?></h2>
+				<p style="margin-top:18px"><?php echo bb_text( 'bb_t_about_p1', '<strong>Bikin-Baju.com (Bikinbaju) adalah konveksi seragam kerja dan seragam kantor</strong> yang beroperasi sejak 2017, memproduksi kemeja, kaos t-shirt, polo shirt, rompi, celana, dan wearpack untuk perusahaan di seluruh Indonesia maupun luar negeri.' ); ?></p>
+				<p><?php echo bb_text( 'bb_t_about_p2', 'Hingga hari ini lebih dari <strong>1.300 perusahaan</strong> — termasuk Pertamina, Pelindo, Pegadaian, dan Nusa Raya Cipta — mempercayakan seragam mereka kepada kami, dengan total lebih dari <strong>928.000 pcs pakaian diproduksi</strong>. Setiap pesanan dikerjakan tenaga jahit berpengalaman dengan kontrol kualitas berlapis: dari pemilihan bahan, pemotongan, jahitan, hingga pengemasan. Kami berkomitmen pada <strong>produksi tepat waktu, garansi produksi, dan harga bersaing</strong> — supaya perusahaan Anda mendapat seragam terbaik tanpa melebihi anggaran.' ); ?></p>
 			</div>
 			<div class="intro-facts reveal">
 				<div class="fact"><b>Sejak 2017</b><span>Berpengalaman memproduksi seragam perusahaan</span></div>
@@ -71,9 +72,9 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="produk" class="stitch-top" style="background:var(--teal-50)">
 		<div class="container">
 			<div class="section-head center reveal">
-				<p class="kicker">Produk Kami</p>
-				<h2 class="section-title">Memproduksi Berbagai Jenis Pakaian Kerja</h2>
-				<p class="section-sub">Enam jenis seragam yang paling banyak dipesan perusahaan — semua bisa custom model, bahan, dan logo Anda.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_kat_kicker', 'Produk Kami' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_kat_title', 'Memproduksi Berbagai Jenis Pakaian Kerja' ); ?></h2>
+				<p class="section-sub"><?php echo bb_text( 'bb_t_kat_sub', 'Enam jenis seragam yang paling banyak dipesan perusahaan — semua bisa custom model, bahan, dan logo Anda.' ); ?></p>
 			</div>
 			<div class="product-grid">
 				<?php foreach ( $products as $p ) : ?>
@@ -93,9 +94,9 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="fasilitas">
 		<div class="container">
 			<div class="section-head center reveal">
-				<p class="kicker">Layanan &amp; Fasilitas</p>
-				<h2 class="section-title">Semua yang Anda Butuhkan Tersedia Gratis</h2>
-				<p class="section-sub">Selain produk berkualitas, kami lengkapi pesanan Anda dengan fasilitas tanpa biaya tambahan.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_fac_kicker', 'Layanan &amp; Fasilitas' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_fac_title', 'Semua yang Anda Butuhkan Tersedia Gratis' ); ?></h2>
+				<p class="section-sub"><?php echo bb_text( 'bb_t_fac_sub', 'Selain produk berkualitas, kami lengkapi pesanan Anda dengan fasilitas tanpa biaya tambahan.' ); ?></p>
 			</div>
 			<div class="facility-grid">
 				<div class="facility reveal"><div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg></div><h3>Desain Gratis</h3><p>Tim desain kami membuatkan mock-up seragam sesuai identitas perusahaan Anda — tanpa biaya.</p></div>
@@ -109,9 +110,9 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="proses" class="stitch-top" style="background:var(--teal-50)">
 		<div class="container">
 			<div class="section-head center reveal">
-				<p class="kicker">Cara Kerja Kami</p>
-				<h2 class="section-title">Dari Desain Sampai Seragam Tiba di Kantor Anda</h2>
-				<p class="section-sub">Proses yang jelas dan transparan — Anda selalu tahu pesanan sedang berada di tahap apa.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_pro_kicker', 'Cara Kerja Kami' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_pro_title', 'Dari Desain Sampai Seragam Tiba di Kantor Anda' ); ?></h2>
+				<p class="section-sub"><?php echo bb_text( 'bb_t_pro_sub', 'Proses yang jelas dan transparan — Anda selalu tahu pesanan sedang berada di tahap apa.' ); ?></p>
 			</div>
 			<div class="steps">
 				<div class="step reveal"><h3>Konsultasi &amp; Desain</h3><p>Ceritakan kebutuhan Anda via WhatsApp. Tim kami bantu memilih model &amp; bahan, lalu buatkan desain gratis.</p></div>
@@ -125,19 +126,19 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="katalog">
 		<div class="container">
 			<div class="section-head center reveal">
-				<p class="kicker">Silahkan Download Gratis</p>
-				<h2 class="section-title">Unduh Katalog &amp; Price List</h2>
-				<p class="section-sub">Semua materi dapat diunduh gratis. Butuh versi cetak atau file lain? Minta lewat WhatsApp.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_kat_kicker2', 'Silahkan Download Gratis' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_kat_title2', 'Unduh Katalog &amp; Price List' ); ?></h2>
+				<p class="section-sub"><?php echo bb_text( 'bb_t_kat_sub2', 'Semua materi dapat diunduh gratis. Butuh versi cetak atau file lain? Minta lewat WhatsApp.' ); ?></p>
 			</div>
 			<div class="download-list">
 				<?php
 				$katalog = array(
-					array( 'Katalog Desain', 'Ilustrasi model seragam untuk referensi', 'katalog-desain.pdf' ),
-					array( 'Katalog Produk', 'Kumpulan foto produk hasil jadi', 'katalog-produk.pdf' ),
-					array( 'Price List', 'Detail harga setiap jenis pakaian', 'price-list.pdf' ),
-					array( 'Company Profile', 'Informasi lengkap mengenai perusahaan', 'company-profile.pdf' ),
-					array( 'Katalog Warna Kain', 'Pilihan warna bahan yang tersedia', 'katalog-warna-kain.pdf' ),
-					array( 'Template Desain', 'Template untuk menempatkan logo Anda', 'template-desain.pdf' ),
+					array( 'Katalog Desain', 'Ilustrasi model seragam untuk referensi' ),
+					array( 'Katalog Produk', 'Kumpulan foto produk hasil jadi' ),
+					array( 'Price List', 'Detail harga setiap jenis pakaian' ),
+					array( 'Company Profile', 'Informasi lengkap mengenai perusahaan' ),
+					array( 'Katalog Warna Kain', 'Pilihan warna bahan yang tersedia' ),
+					array( 'Template Desain', 'Template untuk menempatkan logo Anda' ),
 				);
 				$dl_icon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5 20h14v-2H5v2zM12 2l-5.5 5.5 1.42 1.42L11 5.83V16h2V5.83l3.08 3.09 1.42-1.42L12 2z"/></svg>';
 				foreach ( $katalog as $k ) :
@@ -156,9 +157,9 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="klien" class="stitch-top" style="background:var(--teal-50)">
 		<div class="container">
 			<div class="section-head center reveal">
-				<p class="kicker">Klien Kami</p>
-				<h2 class="section-title">1.300+ Perusahaan Telah Membuktikan</h2>
-				<p class="section-sub">Dari BUMN, perusahaan swasta, hingga kontraktor proyek di berbagai industri.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_kl_kicker', 'Klien Kami' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_kl_title', '1.300+ Perusahaan Telah Membuktikan' ); ?></h2>
+				<p class="section-sub"><?php echo bb_text( 'bb_t_kl_sub', 'Dari BUMN, perusahaan swasta, hingga kontraktor proyek di berbagai industri.' ); ?></p>
 			</div>
 			<div class="clients-strip reveal">
 				<span class="client-logo">PERTAMINA</span>
@@ -173,9 +174,9 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="galeri">
 		<div class="container">
 			<div class="section-head center reveal">
-				<p class="kicker">Galeri Produksi</p>
-				<h2 class="section-title">Lihat Langsung Hasil Produksi Kami</h2>
-				<p class="section-sub">Dokumentasi proses dan hasil produksi seragam untuk klien di berbagai industri.</p>
+				<p class="kicker"><?php echo bb_text( 'bb_t_gal_kicker', 'Galeri Produksi' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_gal_title', 'Lihat Langsung Hasil Produksi Kami' ); ?></h2>
+				<p class="section-sub"><?php echo bb_text( 'bb_t_gal_sub', 'Dokumentasi proses dan hasil produksi seragam untuk klien di berbagai industri.' ); ?></p>
 			</div>
 			<div class="gallery-grid reveal">
 				<?php
@@ -205,8 +206,8 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 	<section id="faq" class="stitch-top" style="background:var(--teal-50)">
 		<div class="container">
 			<div class="section-head center reveal">
-				<p class="kicker">FAQ</p>
-				<h2 class="section-title">Pertanyaan yang Sering Diajukan</h2>
+				<p class="kicker"><?php echo bb_text( 'bb_t_faq_kicker', 'FAQ' ); ?></p>
+				<h2 class="section-title"><?php echo bb_text( 'bb_t_faq_title', 'Pertanyaan yang Sering Diajukan' ); ?></h2>
 			</div>
 			<div class="faq-list reveal">
 				<details class="faq-item"><summary>Berapa minimum pemesanan seragam di Bikinbaju?</summary><p class="faq-a">Minimum pemesanan (MOQ) kami <strong>12 pcs per model</strong>. MOQ rendah ini memungkinkan tim kecil, cabang baru, maupun perusahaan besar memesan seragam dengan nyaman.</p></details>
@@ -220,8 +221,8 @@ $wa_svg = '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" a
 
 	<section class="cta-band">
 		<div class="container reveal">
-			<h2>Konsultasikan Kebutuhan Seragam Anda Sekarang</h2>
-			<p>Konsultasi gratis, desain gratis, sampel kain gratis. Ceritakan kebutuhan Anda — tim kami balas cepat di jam kerja (Senin–Sabtu 08.00–17.00 WIB).</p>
+			<h2><?php echo bb_text( 'bb_t_cta_title', 'Konsultasikan Kebutuhan Seragam Anda Sekarang' ); ?></h2>
+			<p><?php echo bb_text( 'bb_t_cta_text', 'Konsultasi gratis, desain gratis, sampel kain gratis. Ceritakan kebutuhan Anda — tim kami balas cepat di jam kerja (Senin–Sabtu 08.00–17.00 WIB).' ); ?></p>
 			<div class="hero-actions">
 				<a class="btn btn-wa" href="<?php echo esc_url( $wa_default ); ?>" rel="noopener" target="_blank">Tanya Harga Sekarang</a>
 				<a class="btn btn-outline" href="<?php echo esc_url( $wa_design ); ?>" rel="noopener" target="_blank">Minta Desain Gratis</a>
